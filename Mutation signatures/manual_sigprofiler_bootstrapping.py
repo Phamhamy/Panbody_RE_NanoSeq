@@ -69,7 +69,7 @@ for index, row in sample_sigs_df.iterrows():
     if sample_name not in mutations_df.columns:
         continue
     
-    print(f"\n Processing Sample: {sample_name}")
+    print(f"\nProcessing Sample: {sample_name}")
     
     counts = mutations_df[sample_name].values
     total_n = counts.sum()
