@@ -69,7 +69,7 @@ for index, row in sample_sigs_df.iterrows():
     if sample_name not in mutations_df.columns:
         continue
     
-    print(f"\n--- Processing Sample: {sample_name} ---")
+    print(f"\n Processing Sample: {sample_name}")
     
     counts = mutations_df[sample_name].values
     total_n = counts.sum()
@@ -92,7 +92,7 @@ for index, row in sample_sigs_df.iterrows():
     bs_df.to_csv(bs_file, sep='\t', index=False)
     sample_sig_df.to_csv(sig_file, sep='\t', index=False)
     
-    # --- Run Deconvolution
+    # Run Deconvolution
     try:
         with parallel_config(backend='loky', n_jobs=TARGET_CORES):
             Analyze.cosmic_fit(
@@ -107,7 +107,7 @@ for index, row in sample_sigs_df.iterrows():
                 make_plots=False, verbose=False
             )
         
-        # --- Process Results ---
+        # Process Results
         res_path = os.path.join(temp_dir, 'Assignment_Solution', 'Activities', 'Assignment_Solution_Activities.txt')
         
         if os.path.exists(res_path):
