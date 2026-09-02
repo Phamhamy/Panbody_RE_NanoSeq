@@ -33,8 +33,8 @@ parser = argparse.ArgumentParser(
     description="Bootstrap signature deconvolution with 95% CIs."
 )
 parser.add_argument("table1_path", help="Path to donor SBS96 mutation counts table")
-parser.add_argument("table2_path", help="Path to per-sample HDP signature assignment table")
-parser.add_argument("table3_path", help="Path to COSMIC SBS signatures table")
+parser.add_argument("table2_path", help="Path to list of signatures per sample table")
+parser.add_argument("table3_path", help="Path to COSMIC SBS signatures profiles table")
 parser.add_argument("bootstrap_number", type=int, help="Number of bootstrap resamples to run")
 args = parser.parse_args()
  
